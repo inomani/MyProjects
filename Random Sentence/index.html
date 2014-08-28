@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+	function PickQuote() {    	
+		var n = Math.floor((Math.random() * (1000)) + 1); 
+		var books = ["Sherlock", "Alice_in_Wonderland", "Pride_and_Prejudice", "Christmas_Carol"];
+		var page = books[Math.floor(Math.random() * books.length)];
+		$("#newQuote").load(page + ".html p:nth-child(" + n + ")");
+		$("#source").html("Quoted from " + page);
+
+	}
+</script>
+</head>
+<body>
+
+<div id="newQuote"><h2>Change this to Random Quote</h2></div>
+<div id="source"><h2></h2></div>
+
+<button onclick="PickQuote()">Get a Random Quote!</button>
+
+
+</body>
+</html>

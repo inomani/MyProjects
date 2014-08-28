@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+// Called when button is clicked. Prints selected <p> element to screen
+	function PickQuote() {
+	// Select random <p> element on page and assign it an ID
+    	n = Math.floor((Math.random() * 11) + 1);
+    	console.log(n);
+		$("p:nth-child(" + n + ")").attr("id", "newID");
+		
+		var x = document.createElement("P");
+	    var y = document.getElementById("newID").innerHTML;
+    	var t = document.createTextNode(y);
+    	x.appendChild(t);
+    	document.body.appendChild(x);	
+    // Removes assigned ID from previously selected quote
+    	$("p:nth-child(" + n + ")").removeAttr('id');
+	}
+
+</script>
+
+</head>
+<body>
+
+    <p>
+      It is a truth universally acknowledged, that a single man in possession of
+      a good fortune, must be in want of a wife.
+    </p>
+    <p>
+      However little known the feelings or views of such a man may be on his
+      first entering a neighbourhood, this truth is so well fixed in the minds
+      of the surrounding families, that he is considered the rightful property
+      of some one or other of their daughters.
+    </p>
+    <p>
+      "My dear Mr. Bennet," said his lady to him one day, "have you heard that
+      Netherfield Park is let at last?"
+    </p>
+    <p>
+      Mr. Bennet replied that he had not.
+    </p>
+    <p>
+      "But it is," returned she; "for Mrs. Long has just been here, and she told
+      me all about it."
+    </p>
+    <p>
+      Mr. Bennet made no answer.
+    </p>
+    <p>
+      "Do you not want to know who has taken it?" cried his wife impatiently.
+    </p>
+    <p>
+      "<i>You</i> want to tell me, and I have no objection to hearing it."
+    </p>
+    <p>
+      This was invitation enough.
+    </p>
+    <p>
+      "Why, my dear, you must know, Mrs. Long says that Netherfield is taken by
+      a young man of large fortune from the north of England; that he came down
+      on Monday in a chaise and four to see the place, and was so much delighted
+      with it, that he agreed with Mr. Morris immediately; that he is to take
+      possession before Michaelmas, and some of his servants are to be in the
+      house by the end of next week."
+    </p>
+    <p>
+      "What is his name?"
+    </p>
+
+<button onclick="PickQuote()">Get a Random Quote!</button>
+
+</body>
+</html>
