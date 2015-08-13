@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Split Phone Numbers challenge on https://www.hackerrank.com/challenges/split-number
+import re
+
+pattern = r'(\d{1,3})[ \-](\d{1,3})[ \-](\d{4,10})'
+for i in range(int(raw_input())):
+    matchedObj = re.match(pattern,raw_input()).groups()
+    if(matchedObj):
+        print 'CountryCode=%s,LocalAreaCode=%s,Number=%s' % matchedObj   
