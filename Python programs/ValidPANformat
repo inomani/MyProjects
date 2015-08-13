@@ -1,0 +1,17 @@
+# HackerRank check if number is valid PAN number (PAN is the Indian equivalent of SSN)
+
+import re
+
+    
+def validate(number):
+    pattern = '[A-Z][A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][A-Z]'
+    if (re.match(pattern, number) != None):
+        print 'YES'
+    else:
+        print 'NO'
+    
+
+N = int(raw_input())
+for pan in range(N):
+    number = raw_input()
+    validate(number)
